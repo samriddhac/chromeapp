@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Media Galley</title>
+
+    <link rel="stylesheet" type="text/css" href="../css/api/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/custom/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/custom/youtube.css">
+
+    <script type="text/javascript" src="../js/api/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/api/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/api/angular.min.js"></script>
+    <script type="text/javascript" src="../js/api/angular-resource.min-1.1.5.js"></script>
+    <script type="text/javascript" src="../js/application/google/GoogleClient.js"></script>
+
+    <script type="text/javascript" src="../js/application/app.js"></script>
+    <script type="text/javascript" src="../js/util/utils.js"></script>
+    <script type="text/javascript" src="../js/util/Constants.js"></script>
+    <script type="text/javascript" src="../js/util/URLUtil.js"></script>
+
+    <script type="text/javascript" src="../js/application/controller/ApplicationController.js"></script>
+    <script type="text/javascript" src="../js/application/directive/listViewer.js"></script>
+    <script type="text/javascript" src="../js/application/directive/thumbnailViewer.js"></script>
+    <script type="text/javascript" src="../js/application/directive/thumbnailMediaViewer.js"></script>
+
+    <script type="text/javascript" src="../js/application/factory/AbstractClientFactory.js"></script>
+    <script type="text/javascript" src="../js/application/factory/GoogleClientFactory.js"></script>
+    <script type="text/javascript" src="../js/application/factory/HttpClientFactory.js"></script>
+    <script type="text/javascript" src="../js/application/factory/YoutubeClientFactory.js"></script>
+
+
+</head>
+<body ng-app="MediaGallary" ng-controller="ApplicationController" ng-csp="">
+    <header class="header-class">
+        <span class="close-button">x</span>
+        <span class="minimize-button"></span>
+    </header>
+    <div class="main-container" ng-init="authenticate(true)">
+        <div class="left-container">
+            <div class="gallery-header">
+                My Media Gallery
+            </div>
+            <div id="accordionPane" class="accordion">
+                <div id="navGroup" class="accordion-group"  style="border: none">
+                    <div class="accordion-heading nav-header-class">
+                        <a href="#imageSectionDiv" class="accordion-toggle" data-parent="#accordionPane" data-toggle="collapse">My Images</a>
+                    </div>
+                    <div id="imageSectionDiv" class="accordion-body collapse">
+                        <div class="accordion-inner" style="border: none">
+                            Image section
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-group"  style="border: none">
+                    <div class="accordion-heading nav-header-class">
+                        <a href="#videoSectionDiv" class="accordion-toggle" data-parent="#accordionPane"
+                           data-toggle="collapse" ng-click="initMyVideosGallary()">My Videos</a>
+                    </div>
+                    <div id="videoSectionDiv" class="accordion-body collapse">
+                        <div class="accordion-inner"  style="border: none">
+                            <div ng-if="showMyVideo==1">
+                                <listviewer></listviewer>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-group"  style="border: none">
+                    <div class="accordion-heading nav-header-class">
+                        <a href="#fbImgSectionDiv" class="accordion-toggle" data-parent="#accordionPane" data-toggle="collapse">My Facebook</a>
+                    </div>
+                    <div id="fbImgSectionDiv" class="accordion-body collapse">
+                        <div class="accordion-inner"  style="border: none">
+                            Image section
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-group" style="border: none">
+                    <div class="accordion-heading nav-header-class">
+                        <a href="#youtubeDiv" class="accordion-toggle" data-parent="#accordionPane"
+                           data-toggle="collapse" ng-click="initYouTubeGallary()">
+                            My Youtube
+                        </a>
+                    </div>
+                    <div id="youtubeDiv" class="accordion-body collapse">
+                        <div class="accordion-inner list-container"  style="border: 1px solid #000000;">
+                            <div ng-if="showMyyoutube==1">
+                                <listviewer></listviewer>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right-container">
+            <div ng-if="currentView === 1"  class="loader-container">
+                <img src="../image/image_loader.gif" class="loader">
+            </div>
+            <div ng-if="currentView === 2"  class="loader-container">
+                <img src="../image/image_loader.gif" class="loader">
+            </div>
+            <div id="thumbnailViewDiv" ng-if="currentView == 3">
+                <thumbnailviewer></thumbnailviewer>
+            </div>
+            <div id="thumbnailMediaViewDiv" ng-if="currentView == 4">
+                <thumbnailmedia ng-item="selectedMedia" ng-media-list="mediaList"></thumbnailmedia>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

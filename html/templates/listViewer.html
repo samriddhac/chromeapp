@@ -1,0 +1,9 @@
+<div>
+    <ul>
+        <li class="list-viewer label-plain" ng-repeat="item in listResult">
+            <div class="list-content-container"  ng-click="call(item, item.name)" ng-class="{selectedlistitem:isSelectedListItem(item.name)}">
+                <span ng-bind-template="{{item.title}}"></span>
+            </div>
+        </li>
+    </ul>
+</div>

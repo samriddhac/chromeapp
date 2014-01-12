@@ -1,0 +1,12 @@
+<div>
+    <div class="thumbnail-container">
+        <div class="row-fluid">
+            <div class="col-xs-6" ng-repeat="thumbnail in thumbnailResult">
+                <div class="thumbnail-content" title="{{thumbnail.title}}" ng-click="call(thumbnail, thumbnail.kind)">
+                    <img ng-src="{{thumbnail.imageUri}}" style="width:88px; height:88px;"/>
+                    <span class="label-plain" ng-bind-template="{{thumbnail.title}}"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

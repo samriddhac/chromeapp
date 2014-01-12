@@ -1,0 +1,30 @@
+{
+    "name": "Your Media Gallary",
+    "description": "Your Media Gallary",
+    "version": "0.1.1.1",
+    "manifest_version": 2,
+    "oauth2": {
+        "client_id": "<CLIENT_ID>",
+        "scopes": [
+            "https://www.googleapis.com/auth/drive",
+            "https://gdata.youtube.com"
+        ]
+    },
+    "app": {
+        "background": {
+            "scripts": ["background.js"]
+        }
+    },
+    "key": "<APPLICATION_KEY>",
+    "permissions": [
+        "identity",
+        "webview",
+        "storage",
+        "<all_urls>",
+        "https://ssl.gstatic.com/",
+        "https://www.googleapis.com/",
+        "https://accounts.google.com/",
+        "https://gdata.youtube.com/"
+    ],
+    "icons": { "16": "deezer_cloud.png", "128": "deezer_cloud.png" }
+}

@@ -1,0 +1,54 @@
+.thumb {
+    margin-right: 5px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.what-to-watch-icon {
+    background: no-repeat url(../../image/icons/youtube-guide-topguide.webp) 0 -440px;
+    background-size: auto;
+    width: 20px;
+    height: 20px;
+}
+
+.my-channel-icon {
+    background: no-repeat url(../../image/icons/youtube-guide-topguide.webp) 0 -91px;
+    background-size: auto;
+    width: 20px;
+    height: 20px;
+}
+
+.my-subscriptions-icon {
+    background: no-repeat url(../../image/icons/youtube-guide-topguide.webp) 0 -349px;
+    background-size: auto;
+    width: 20px;
+    height: 20px;
+}
+
+.social-icon {
+    background: no-repeat url(../../image/icons/youtube-guide-topguide.webp) 0 -157px;
+    background-size: auto;
+    width: 20px;
+    height: 20px;
+}
+
+.history-icon {
+    background: no-repeat url(../../image/icons/youtube-guide-topguide.webp) 0 -67px;
+    background-size: auto;
+    width: 20px;
+    height: 20px;
+}
+
+.watch-later-icon {
+    background: no-repeat url(../../image/icons/youtube-guide-topguide.webp) 0 -582px;
+    background-size: auto;
+    width: 20px;
+    height: 20px;
+}
+
+.purchases-icon {
+    background: no-repeat url(../../image/icons/youtube-guide-topguide.webp) 0 0;
+    background-size: auto;
+    width: 20px;
+    height: 20px;
+}

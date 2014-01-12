@@ -1,0 +1,15 @@
+<div>
+    <div class="thumbnail-media-container">
+        <div id="mediaListDiv" class="media-list-container">
+            <ul>
+                <li class="media-list-content" ng-repeat="item in mediaList" ng-click="loadMedia(item)">
+                    <img ng-src="{{item.imageUri}}" class="image-container"/>
+                    <span class="label-plain" ng-bind-template="{{item.title}}"/>
+                </li>
+            </ul>
+        </div>
+        <div class="media-container">
+            <webview id="mediaViewer" src="http://www.youtube.com/embed/vP8armlOGqo" class="media-content"></webview>
+        </div>
+    </div>
+</div>
