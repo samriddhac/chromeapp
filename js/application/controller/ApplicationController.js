@@ -13,6 +13,7 @@ app.controller('ApplicationController', function ($scope, AbstractClientFactory)
 
     var googleClientFactory = AbstractClientFactory.factoryInstance(Constants.SERVICE_PROVIDER_GOOGLE);
     var youtubeClientFactory = AbstractClientFactory.factoryInstance(Constants.SERVICE_PROVIDER_YOUTUBE);
+    var webRtcClientFactory = undefined;
 
     $scope.authenticate = function(interactive) {
         if (!googleClientFactory._AUTH_TOKEN) {
@@ -39,6 +40,10 @@ app.controller('ApplicationController', function ($scope, AbstractClientFactory)
     $scope.initMyVideosGallary = function() {
         $scope.showMyVideo = 1;
         $scope.listResult = $scope.myVideoList;
+        webRtcClientFactory = AbstractClientFactory.factoryInstance(Constants.MEDIA_PROVIDER_WEBRTC);
+        if(webRtcClientFactory.isWebRTCEnabled){
+            console.log('Web RTC Enabled!!');
+        }
     };
 
     $scope.initSubscription = function(opt_callback) {
@@ -121,7 +126,13 @@ app.controller('ApplicationController', function ($scope, AbstractClientFactory)
     };
 
     $scope.call = function(el,arguments) {
-        el.clickFunctionReference(arguments);
+        if(!Util.isNullObject(arguments)){
+            el.clickFunctionReference(arguments);
+        }
+        else {
+            el.clickFunctionReference();
+        }
+
     };
 
 
@@ -200,6 +211,14 @@ app.controller('ApplicationController', function ($scope, AbstractClientFactory)
         }
     ];
 
+    $scope.captureVideo = function(){
+        $scope.currentView = Constants._MEDIA_VIEW;
+        webRtcClientFactory.connectToMediaAdapters(function(stream) {
+            var video = document.querySelector('#localMedia').src = stream;
+            video.load();
+        });
+    };
+
     $scope.myVideoList = [
         {
             title:"Record a Video",
@@ -207,7 +226,7 @@ app.controller('ApplicationController', function ($scope, AbstractClientFactory)
             desc:"Record a Video",
             thumbnail:"../image/icons/pixel.gif",
             imageClass:"thumb what-to-watch-icon",
-            clickFunctionReference:$scope.initYoutubeChannelGuide
+            clickFunctionReference:$scope.captureVideo
         }
     ];
 

@@ -4,6 +4,7 @@ Constants.SERVICE_PROVIDER_GOOGLE= "google";
 Constants.SERVICE_PROVIDER_YOUTUBE= "youtube";
 Constants.SERVICE_PROVIDER_GOOGLEPLUS= "google_plus";
 Constants.SERVICE_PROVIDER_FACEBOOK= "facebook";
+Constants.MEDIA_PROVIDER_WEBRTC= "web_rtc";
 
 Constants.HTTP_METHOD_GET = "GET";
 Constants.HTTP_METHOD_POST = "POST";
@@ -16,6 +17,7 @@ Constants._DEFAULT_VIEW = 1;
 Constants._LOADER_VIEW = 2;
 Constants._THUMBNAIL_VIEW = 3;
 Constants._THUMBNAIL_MEDIA_PLAYER_VIEW = 4;
+Constants._MEDIA_VIEW = 5;
 
 Constants._YOUTUBE_DATA_API_BASE_URL = "https://www.googleapis.com/";
 Constants._YOUTUBE_VIDEO_BASE_URL = "http://www.youtube.com/embed/";

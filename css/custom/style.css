@@ -239,3 +239,9 @@ a:hover a:active{
     padding:4%  ;
 }
 
+.web-cam-stream-view {
+    width: 560px;
+    height:450px;
+    display: block;
+}
+

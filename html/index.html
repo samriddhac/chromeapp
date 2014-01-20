@@ -27,6 +27,7 @@
     <script type="text/javascript" src="../js/application/factory/GoogleClientFactory.js"></script>
     <script type="text/javascript" src="../js/application/factory/HttpClientFactory.js"></script>
     <script type="text/javascript" src="../js/application/factory/YoutubeClientFactory.js"></script>
+    <script type="text/javascript" src="../js/application/factory/WebRTCClientFactory.js"></script>
 
 
 </head>
@@ -57,7 +58,7 @@
                            data-toggle="collapse" ng-click="initMyVideosGallary()">My Videos</a>
                     </div>
                     <div id="videoSectionDiv" class="accordion-body collapse">
-                        <div class="accordion-inner"  style="border: none">
+                        <div class="accordion-inner list-container"  style="border: none">
                             <div ng-if="showMyVideo==1">
                                 <listviewer></listviewer>
                             </div>
@@ -103,6 +104,9 @@
             </div>
             <div id="thumbnailMediaViewDiv" ng-if="currentView == 4">
                 <thumbnailmedia ng-item="selectedMedia" ng-media-list="mediaList"></thumbnailmedia>
+            </div>
+            <div id="videoCaptureDivId" ng-if="currentView == 5">
+                <video id="localMedia" class="web-cam-stream-view" autoplay controls/>
             </div>
         </div>
     </div>

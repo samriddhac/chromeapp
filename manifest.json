@@ -4,9 +4,9 @@
     "version": "0.1.1.1",
     "manifest_version": 2,
     "oauth2": {
-        "client_id": "<CLIENT_ID>",
+        "client_id": "493765492202-i385dsofga7lj0do69u4n060vi1n8hjo.apps.googleusercontent.com",
         "scopes": [
-            "https://www.googleapis.com/auth/drive",
+            "https://www.googleapis.com/auth/youtube",
             "https://gdata.youtube.com"
         ]
     },
@@ -15,11 +15,13 @@
             "scripts": ["background.js"]
         }
     },
-    "key": "<APPLICATION_KEY>",
+    "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAy2jSdlaSXp/jpqbThcJf7htSjj/ECUJDOKCYfMz9QpyPmrc3RHLO173pzX1Cpzn19OMkdTdpIzxzMisjDP0tz1PydgR53R4yGI9veeVt9sI1DCRvO7ZN7qupVhxk+BNGCubdZzT3mSNxWruZ9zHYGUh8K/GjVxpJc9JXeKpcy/txdq9nTr6VjfDV6Ew6+t5RPyv8eb50yoGNkZIiiuIsiTkbTPdG7PbtM/E0nNCo3+1/n9p/0vc9rPRvlU0Qk86BRG0kksWTVoFieoWDj2y8FrIS1DfWE/GfsFlctn27cv1wqd0kPrj/XMemgHvW7ZoQnTzGuRdno4vQLvQAS69r9wIDAQAB",
     "permissions": [
         "identity",
         "webview",
         "storage",
+        "audioCapture",
+        "videoCapture",
         "<all_urls>",
         "https://ssl.gstatic.com/",
         "https://www.googleapis.com/",
